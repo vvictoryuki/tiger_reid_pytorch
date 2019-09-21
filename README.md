@@ -40,7 +40,7 @@ train train.py -d (1,2)
 If you want to apply some data augmentation methods to the dataset, you can modify the `tiger_reid_pytorch/transform.py`. If you want to use other models to train, you can modify the `tiger_reid_pytorch/aligned_reid/model/Model.py`.
 After training, this code will run on validation set automatically and output the accuracy result (mAP, top-1, top-5, top-10).
 
-##### If you any questions, please contact vvictoryuki@163.com.
+##### If you have any questions, please contact vvictoryuki@163.com.
 
 
 
