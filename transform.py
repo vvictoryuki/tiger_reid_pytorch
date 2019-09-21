@@ -8,13 +8,10 @@ if __name__ == '__main__':
     test_im_names = []
     test_marks = []
     new_im_dir = './images'
-
-    im_path = './new_images/train'
-
-    save_path = '.'
-
-    train_path = './tiger_dateset/bad_train.txt'
-    test_path = './tiger_dateset/bad_test.txt'
+    im_path = './tiger_dataset/atrw_reid_train/train'
+    save_path = './'
+    train_path = './tiger_dateset/train.txt'
+    test_path = './tiger_dateset/test.txt'
 
     # train_ids_num = 0
     with open(train_path, 'r') as f:
@@ -38,18 +35,18 @@ if __name__ == '__main__':
             ori_name = name.split('.')[0]
             new_im_name = '{:08d}_{:04d}_{:08d}.jpg'.format(id, cam, int(ori_name))
             #new_im_name_2 = '{:08d}_{:04d}_{:08d}.jpg'.format(id, cam+300, int(ori_name))
-            new_im_name_flip = '{:08d}_{:04d}_{:08d}.jpg'.format(id+300, cam, int(ori_name))
+            #new_im_name_flip = '{:08d}_{:04d}_{:08d}.jpg'.format(id+300, cam, int(ori_name))
             shutil.copy(osp.join(im_path, name), osp.join(new_im_dir, new_im_name))
 
             
-            ori_img = cv2.imread(osp.join(im_path , name))
-            flip_img = cv2.flip(ori_img, 1)
-            cv2.imwrite(osp.join(new_im_dir , new_im_name_flip), flip_img)
+            #ori_img = cv2.imread(osp.join(im_path , name))
+            #flip_img = cv2.flip(ori_img, 1)
+            #cv2.imwrite(osp.join(new_im_dir , new_im_name_flip), flip_img)
             #cv2.imwrite(osp.join(new_im_dir , new_im_name_2), flip_img)
             
             train_im_names.append(new_im_name)
             #train_im_names.append(new_im_name_2)
-            train_im_names.append(new_im_name_flip)
+            #train_im_names.append(new_im_name_flip)
         train_ids2labels = dict(zip(ids, range(len(ids))))
         # print(len(ids))
        
