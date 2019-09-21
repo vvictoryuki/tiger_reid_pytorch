@@ -35,7 +35,7 @@ python train.py --total_epochs 30 --exp_decay_at_epoch 15
 The default setting: DenseNet-161, global loss:local loss:id classification loss = 0.6:0:0.3 .
 If you want to use specific GPUs, you can use '-d' or '--sys_device_ids'. For example, if you want to use GPU1 and GPU2, just use:
 ```
-train train.py -d (6,7)
+train train.py -d (1,2)
 ```
 If you want to apply some data augmentation methods to the dataset, you can modify the transform.py. If you want to use other models to train, you can modify the tiger_reid_pytorch/aligned_reid/model/Model.py.
 After training, this code will run on validation set automatically and output the accuracy result (mAP, top-1, top-5, top-10).
