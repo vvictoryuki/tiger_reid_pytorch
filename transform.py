@@ -10,8 +10,8 @@ if __name__ == '__main__':
     new_im_dir = './images'
     im_path = './tiger_dataset/atrw_reid_train/train'
     save_path = './'
-    train_path = './tiger_dateset/train.txt'
-    test_path = './tiger_dateset/test.txt'
+    train_path = './tiger_dataset/train.txt'
+    test_path = './tiger_dataset/test.txt'
 
     # train_ids_num = 0
     with open(train_path, 'r') as f:
