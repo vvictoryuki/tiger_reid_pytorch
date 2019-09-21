@@ -14,29 +14,29 @@
 You can download the data from https://cvwc2019.github.io/challenge.html.
 
 - create the image list
-'''
+```
 cd tiger_dataset
 python split.py
-'''
+```
 In folder tiger_dataset, we have already prepared the image list in all_list.txt for you. It is noted that not each image has its id (only images of the tigers' right/left sides have been annotated). In reid_list_train.txt we list all ids and the corresponding images. By running split.py you can get train.txt and test.txt in which we list the train set information and validation set information.
 
 - prepare data for train&test
-'''
+```
 cd ..
 mkdir images
 python partition.py
-'''
+```
 By runnng partition.py you can create the images folder containing all prepared images and the partition.pkl which is used to tell the train.py which image is belong to the train set and which image is belong to the test set (query and gallery information is also included).
 
 ### Trian&Test
-'''
+```
 python train.py --total_epochs 30 --exp_decay_at_epoch 15
-'''
+```
 The default setting: DenseNet-161, global loss:local loss:id classification loss = 0.6:0:0.3 .
 If you want to use specific GPUs, you can use '-d' or '--sys_device_ids'. For example, if you want to use GPU1 and GPU2, just use:
-'''
+```
 train train.py -d (6,7)
-'''
+```
 If you want to apply some data augmentation methods to the dataset, you can modify the transform.py. If you want to use other models to train, you can modify the tiger_reid_pytorch/aligned_reid/model/Model.py.
 After training, this code will run on validation set automatically and output the accuracy result (mAP, top-1, top-5, top-10).
 
